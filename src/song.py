@@ -1,6 +1,6 @@
 class Song:
-    
     def __init__(self, name, duration):
         self.name = name
         self.duration = duration
-        self.song_list = []
+
+        # think about kwargs

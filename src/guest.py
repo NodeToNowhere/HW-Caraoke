@@ -1,4 +1,3 @@
 class Guests:
-    def __init__(self, guest):
-        self.guest = guest
-        
+    def __init__(self, name):
+        self.name = name
