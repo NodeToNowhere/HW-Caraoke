@@ -15,12 +15,12 @@ class TestRoom(unittest.TestCase):
         self.song_1 = Song("War Big", 511)
         self.song_1 = Song("War Wig", 365)
 
-        self.guest_1 = Guests("Betty")
-        self.guest_2 = Guests("Ben")
-        self.guest_3 = Guests("Bill")
-        self.guest_4 = Guests("Bob")
-        self.guest_5 = Guests("Ben")
-        self.guest_6 = Guests("Brian")
+        self.guest_1 = Guests("Betty", 4.51)
+        self.guest_2 = Guests("Ben", 3.23)
+        self.guest_3 = Guests("Bill", 9.23)
+        self.guest_4 = Guests("Bob", 1.11)
+        self.guest_5 = Guests("Biff", 0)
+        self.guest_6 = Guests("Brian", 0.12)
 
     def test_room_has_name(self):
         expected = "Green"
@@ -52,4 +52,6 @@ class TestRoom(unittest.TestCase):
         actual = self.room.add_guests(self.guest_6)
 
         self.assertEqual(expected, actual)
-        self.room.guest_list.clear()
+
+    def group_has_enough_money_for_room(self):
+        pass
