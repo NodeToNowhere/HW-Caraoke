@@ -13,7 +13,7 @@ class TestRoom(unittest.TestCase):
         self.song_2 = Song("War Fig", 345)
         self.song_3 = Song("War Gig", 286)
         self.song_4 = Song("War Big", 511)
-        self.song_5 = Song("War Wig", 365)
+        self.song_5 = Song("War Wig", 365)  
 
         self.guest_1 = Guests("Betty", 4.51, "War Pig")
         self.guest_2 = Guests("Ben", 3.23, "War Fig")
@@ -32,6 +32,7 @@ class TestRoom(unittest.TestCase):
 
         expected = "War Pig"
         actual = self.room.add_song(self.song_1)
+        self.room.song_list.clear() 
 
     def test_guest_list_length(self):
         self.room.add_guests(self.guest_1)
@@ -52,6 +53,7 @@ class TestRoom(unittest.TestCase):
         actual = self.room.add_guests(self.guest_6)
 
         self.assertEqual(expected, actual)
+        self.room.guest_list.clear() 
 
     def test_group_has_enough_money_for_room(self):
         self.room.add_guests(self.guest_1)
@@ -63,7 +65,18 @@ class TestRoom(unittest.TestCase):
         expected = True
         actual = self.room.group_money_check(self.room.guest_list)
         self.assertEqual(expected, actual)
+        self.room.guest_list.clear() 
 
     
-
+    def test_song_time_limit(self):
+        self.room.add_song(self.song_1)
+        self.room.add_song(self.song_1)
+        self.room.add_song(self.song_1)
+        self.room.add_song(self.song_1)
+        
+        expected = False
+        actual = self.room.add_song(self.song_1)
+        
+        self.assertEqual(expected, actual)
+        
     

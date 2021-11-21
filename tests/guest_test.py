@@ -39,6 +39,8 @@ class TestGuest(unittest.TestCase):
         expected = "Betty: Oh yeah! War Pig is my jam!"
         actual = self.guest_1.guest_check_song_list(self.guest_1, self.room.song_list)
         self.assertEqual(expected,actual)
+        self.room.song_list.clear() 
+        self.room.guest_list.clear() 
         
 
     def test_room_plays_favorite_song_false(self):
@@ -49,5 +51,6 @@ class TestGuest(unittest.TestCase):
         expected = "Bill: This music sucks..."
         actual = self.guest_1.guest_check_song_list(self.guest_3, self.room.song_list)
         self.assertEqual(expected,actual)
-        
+        self.room.song_list.clear() 
+        self.room.guest_list.clear() 
         
