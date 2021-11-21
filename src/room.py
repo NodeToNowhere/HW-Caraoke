@@ -13,7 +13,6 @@ class Room:
 
     def add_song(self, song):
         self.song_list.append(song)
-        
 
     def group_money_check(self, guest_list):
         total_money = 0

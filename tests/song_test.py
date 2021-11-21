@@ -1,7 +1,8 @@
 import unittest
 
+from src.guest import Guests
+from src.room import Room
 from src.song import Song
-
 
 class TestSong(unittest.TestCase):
     def setUp(self):
