@@ -53,5 +53,15 @@ class TestRoom(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
-    def group_has_enough_money_for_room(self):
-        pass
+    def test_group_has_enough_money_for_room(self):
+        self.room.add_guests(self.guest_1)
+        self.room.add_guests(self.guest_2)
+        self.room.add_guests(self.guest_3)
+        self.room.add_guests(self.guest_4)
+        self.room.add_guests(self.guest_5)
+        
+        expected = True
+        actual = self.room.group_money_check(self.room.guest_list)
+        self.assertEqual(expected, actual)
+        
+    

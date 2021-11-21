@@ -12,7 +12,7 @@ class TestGuest(unittest.TestCase):
         actual = self.guest.name
         self.assertEqual(expected, actual)
 
-    def test_guest_has_money(self):
+    def test_guest_has_wallet(self):
         expected = True
         actual = self.guest.wallet > 0
         self.assertEqual(expected, actual)
